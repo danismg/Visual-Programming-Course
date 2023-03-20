@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-28 05:07:57 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI4OzAxOjQ2OjQwIFBNOzI4MTI="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI4OzAxOjUxOjU3IFBNOzM7TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI4OzExOjI2OjAwIEFNO2Zsb3cga3VpcyBha2hpciBkYW5pIGRhbiBtYXN0dS5mcHJnOzkxNTc="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI4OzA1OjA3OjU3IFBNOzU7MjkzMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="size" type="Integer" array="False" size=""/>
+            <assign variable="size" expression="5"/>
+            <declare name="register" type="String" array="False" size=""/>
+            <declare name="find" type="String" array="False" size=""/>
+            <declare name="kata" type="String" array="True" size="size"/>
+            <declare name="jeniskata" type="String" array="True" size="size"/>
+            <declare name="artikata" type="String" array="True" size="size"/>
+            <declare name="pilihan" type="String" array="False" size=""/>
+            <declare name="kamus" type="String" array="True" size="size"/>
+            <declare name="finds" type="Boolean" array="False" size=""/>
+            <assign variable="finds" expression="false"/>
+            <assign variable="kata[0]" expression="&quot;&quot;"/>
+            <assign variable="kata[1]" expression="&quot;&quot;"/>
+            <assign variable="kata[2]" expression="&quot;&quot;"/>
+            <assign variable="kata[3]" expression="&quot;&quot;"/>
+            <assign variable="kata[4]" expression="&quot;&quot;"/>
+            <do expression="pilihan!=&quot;---&quot;">
+                <input variable="pilihan"/>
+                <if expression="pilihan==&quot;register&quot;">
+                    <then>
+                        <call expression="inregister(kata,jeniskata,artikata,kamus)"/>
+                    </then>
+                    <else>
+                        <if expression="finds==false">
+                            <then>
+                                <call expression="infind(kata,kamus)"/>
+                            </then>
+                            <else>
+                                <do expression="find!=&quot;---&quot;">
+                                    <input variable="find"/>
+                                </do>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="infind" type="None" variable="">
+        <parameters>
+            <parameter name="inkata" type="String" array="True"/>
+            <parameter name="inkamus" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="find" type="String" array="False" size=""/>
+            <do expression="find==&quot;---&quot;">
+                <input variable="find"/>
+                <if expression="find==inkata[0]">
+                    <then>
+                        <output expression="inkamus[0]" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="find==inkata[1]">
+                            <then>
+                                <output expression="inkamus[1]" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="find==inkata[2]">
+                                    <then>
+                                        <output expression="inkamus[2]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="find==inkata[3]">
+                                            <then>
+                                                <output expression="inkamus[3]" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="find==inkata[4]">
+                                                    <then>
+                                                        <output expression="inkamus[4]" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="inregister" type="None" variable="">
+        <parameters>
+            <parameter name="inkata" type="String" array="True"/>
+            <parameter name="injeniskata" type="String" array="True"/>
+            <parameter name="inartikata" type="String" array="True"/>
+            <parameter name="inkamus" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="finds" type="Boolean" array="False" size=""/>
+            <declare name="size" type="Integer" array="False" size=""/>
+            <assign variable="size" expression="5"/>
+            <input variable="inkata[size-1]"/>
+            <input variable="injeniskata[size-1]"/>
+            <input variable="inartikata[size-1]"/>
+            <assign variable="inkamus[size-1]" expression="inkata[size-1] &amp; &quot;#&quot; &amp; injeniskata[size-1] &amp; &quot;#&quot; &amp; inartikata[size-1]"/>
+            <assign variable="size" expression="size - 1"/>
+            <assign variable="finds" expression="true"/>
+        </body>
+    </function>
+</flowgorithm>

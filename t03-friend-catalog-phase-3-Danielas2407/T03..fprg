@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ACER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-16 05:26:10 PM"/>
+        <attribute name="created" value="QUNFUjtMQVBUT1AtNUZDRFNWMFE7MjAyMC0xMC0xNDswNzoyNDo1NyBQTTsyNjI3"/>
+        <attribute name="edited" value="QUNFUjtMQVBUT1AtNUZDRFNWMFE7MjAyMC0xMC0xNDswODo1MTo1NSBQTTsyOzI3MzU="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTE2OzA1OjI2OjEwIFBNOzE7MjkxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NIM, FullName, StudyProgram, UsernameGithub, PhoneNumber, NickName, Gender" type="String" array="False" size=""/>
+            <declare name="Generation" type="Integer" array="False" size=""/>
+            <declare name="Greetings" type="String" array="False" size=""/>
+            <declare name="YourUsernameGithub" type="String" array="False" size=""/>
+            <declare name="PhoneNumber1, PhoneNumber2, PhoneNumber3" type="String" array="False" size=""/>
+            <declare name="OptionGender" type="String" array="False" size=""/>
+            <declare name="YearGeneration" type="Integer" array="False" size=""/>
+            <input variable="NIM"/>
+            <input variable="FullName"/>
+            <input variable="StudyProgram"/>
+            <input variable="YourUserNameGithub"/>
+            <do expression="PhoneNumber1 == &quot;---&quot;">
+                <input variable="PhoneNumber1"/>
+            </do>
+            <input variable="PhoneNumber2"/>
+            <if expression="PhoneNumber2 == &quot;---&quot;">
+                <then>
+                    <assign variable="PhoneNumber" expression="PhoneNumber1"/>
+                </then>
+                <else>
+                    <input variable="PhoneNumber3"/>
+                    <if expression="PhoneNumber3 == &quot;---&quot;">
+                        <then>
+                            <assign variable="PhoneNumber" expression="PhoneNumber1&amp;&quot;,&quot;&amp; PhoneNumber2"/>
+                        </then>
+                        <else>
+                            <assign variable="PhoneNumber" expression="PhoneNumber1&amp;&quot;,&quot;&amp; PhoneNumber2&amp;&quot;,&quot;&amp;PhoneNumber3"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <input variable="NickName"/>
+            <input variable="OptionGender"/>
+            <input variable="YearGeneration"/>
+            <if expression="YourUsernameGithub == &quot;&quot;">
+                <then>
+                    <assign variable="UserNameGithub" expression="&quot;---&quot;"/>
+                </then>
+                <else>
+                    <assign variable="UsernameGithub" expression="YourUserNameGithub"/>
+                </else>
+            </if>
+            <if expression="OptionGender == &quot;L&quot;">
+                <then>
+                    <if expression="YearGeneration &lt; 2020">
+                        <then>
+                            <assign variable="Greetings" expression="&quot;Bang&quot; &amp; &quot; &quot; &amp; NickName"/>
+                        </then>
+                        <else>
+                            <assign variable="Greetings" expression="NickName"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="YearGeneration &lt; 2020">
+                        <then>
+                            <assign variable="Greetings" expression="&quot;Kak&quot; &amp; &quot; &quot; &amp; NickName"/>
+                        </then>
+                        <else>
+                            <assign variable="Greetings" expression="Nickname"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="NIM&amp;&quot;#&quot;&amp; FullName&amp;&quot;#&quot;&amp; StudyProgram&amp;&quot;#&quot;&amp; UserNameGithub&amp;&quot;#&quot;&amp; PhoneNumber" newline="True"/>
+            <output expression="Greetings" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

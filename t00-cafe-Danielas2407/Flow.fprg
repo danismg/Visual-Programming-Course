@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-09 04:47:54 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTA3OzA4OjIzOjMyIEFNOzI3OTU="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTA5OzA0OjExOjE2IFBNOzE7S3Jpc3RpYW4gTmFpbmdnb2xhbjtERVNLVE9QLVBRREJQRDU7MjAyMC0xMC0wNjswOC4yMC4zNCBQTTtUMDAuZnByZzs3OTA4"/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTA5OzA0OjQ3OjU0IFBNOzY7MjkzMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="drinkName, foodName" type="String" array="False" size=""/>
+            <declare name="optionDrink, optionFood" type="Integer" array="False" size=""/>
+            <input variable="optionDrink"/>
+            <input variable="optionFood"/>
+            <if expression="optionDrink == 1">
+                <then>
+                    <assign variable="drinkName" expression="&quot;Teh Hangat&quot;"/>
+                </then>
+                <else>
+                    <assign variable="drinkName" expression="&quot;Es Kelapa Muda&quot;"/>
+                </else>
+            </if>
+            <if expression="optionFood == 1">
+                <then>
+                    <assign variable="foodName" expression="&quot;Bakso Tenis&quot;"/>
+                </then>
+                <else>
+                    <if expression="optionFood == 2">
+                        <then>
+                            <assign variable="foodName" expression="&quot;Sate Padang&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="optionFood == 3">
+                                <then>
+                                    <assign variable="foodName" expression="&quot;Udang Bakar&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="foodName" expression="&quot;---&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="drinkName &amp;&quot;#&quot;&amp; foodName" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

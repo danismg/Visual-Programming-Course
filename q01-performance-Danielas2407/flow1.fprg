@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-21 05:45:13 PM"/>
+        <attribute name="created" value="SHA7TEFQVE9QLTMwRVU3RUM0OzIwMjAtMTAtMjE7MDE6MTI6MjEgUE07MjQ0OA=="/>
+        <attribute name="edited" value="SHA7TEFQVE9QLTMwRVU3RUM0OzIwMjAtMTAtMjE7MDI6NDE6MTQgUE07MzsyNTYz"/>
+        <attribute name="edited" value="QXN1cztMQVBUT1AtMEJBNVNOSVA7MjAyMC0xMC0yMTswNDo1MToxNiBQTTsxOzI4NDQ="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTIxOzA1OjQ1OjEzIFBNOzE7MjkxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="IPK, IPS, Kredit, SKS" type="Integer" array="False" size=""/>
+            <declare name="NilaiAngka, Performa" type="Real" array="False" size=""/>
+            <declare name="Nilaihuruf" type="String" array="False" size=""/>
+            <input variable="Kredit"/>
+            <input variable="Nilaihuruf"/>
+            <if expression="Nilaihuruf == &quot;A&quot;">
+                <then>
+                    <assign variable="NilaiAngka" expression="4"/>
+                </then>
+                <else>
+                    <if expression="Nilaihuruf == &quot;AB&quot;">
+                        <then>
+                            <assign variable="NilaiAngka" expression="3.5"/>
+                        </then>
+                        <else>
+                            <if expression="Nilaihuruf == &quot;B&quot;">
+                                <then>
+                                    <assign variable="NilaiAngka" expression="3"/>
+                                </then>
+                                <else>
+                                    <if expression="Nilaihuruf == &quot;BC&quot;">
+                                        <then>
+                                            <assign variable="NilaiAngka" expression="2.5"/>
+                                        </then>
+                                        <else>
+                                            <if expression="Nilaihuruf == &quot;C&quot;">
+                                                <then>
+                                                    <assign variable="NilaiAngka" expression="2"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="Nilaihuruf == &quot;D&quot;">
+                                                        <then>
+                                                            <assign variable="NilaiAngka" expression="1"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="Nilaihuruf == &quot;E&quot;">
+                                                                <then>
+                                                                    <assign variable="NilaiAngka" expression="0"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="Performa" expression="Kredit*NilaiAngka"/>
+            <output expression="Performa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

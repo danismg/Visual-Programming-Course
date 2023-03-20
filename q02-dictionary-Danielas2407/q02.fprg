@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="MANALU"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-28 02:34:13 PM"/>
+        <attribute name="created" value="TUFOQUxVO0xBUFRPUC1ISkY4Skc0UzsyMDIwLTEyLTIxOzAzOjA0OjU5IFBNOzI3ODI="/>
+        <attribute name="edited" value="TUFOQUxVO0xBUFRPUC1ISkY4Skc0UzsyMDIwLTEyLTIxOzAzOjMzOjA1IFBNOzE7Mjg4Mw=="/>
+        <attribute name="edited" value="QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMi0yODsxMTowNTo1MiBBTTsyO0FTVVM7REFOSUVMTElNQk9ORzMxOzIwMjAtMTItMjg7MTA6MTQ6NDMgQU07eWEgZ2l0dS5mcHJnOzY2NDQ="/>
+        <attribute name="edited" value="QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMi0yODsxMjowMDozNSBQTTsyOzI3NDY="/>
+        <attribute name="edited" value="TUFTVFVBUkkgT0NUQUZJTkE7TEFQVE9QLTVTVUtFQks2OzIwMjAtMTItMjg7MDI6MzE6MjUgUE07MTszNjc4"/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI4OzAyOjM0OjEzIFBNOzE7MjkxOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pilihmenu" type="String" array="False" size=""/>
+            <declare name="Berhenti" type="Boolean" array="False" size=""/>
+            <assign variable="Berhenti" expression="false"/>
+            <declare name="size" type="Integer" array="False" size=""/>
+            <assign variable="size" expression="5"/>
+            <declare name="kata, jeniskata, artikata, kamus" type="String" array="True" size="size"/>
+            <assign variable="kata[0]" expression="&quot;&quot;"/>
+            <assign variable="kata[1]" expression="&quot;&quot;"/>
+            <assign variable="kata[2]" expression="&quot;&quot;"/>
+            <assign variable="kata[3]" expression="&quot;&quot;"/>
+            <assign variable="kata[4]" expression="&quot;&quot;"/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <while expression="!Berhenti">
+                <input variable="pilihmenu"/>
+                <if expression="pilihmenu = &quot;register&quot;">
+                    <then>
+                        <call expression="Inregister(size, kata, jeniskata, artikata, kamus)"/>
+                        <assign variable="size" expression="size - 1"/>
+                    </then>
+                    <else>
+                        <if expression="pilihmenu = &quot;find&quot;">
+                            <then>
+                                <call expression="Infind(kata,kamus)"/>
+                            </then>
+                            <else>
+                                <assign variable="Berhenti" expression="true"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="Infind" type="None" variable="">
+        <parameters>
+            <parameter name="kata" type="String" array="True"/>
+            <parameter name="kamus" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="findkata" type="String" array="False" size=""/>
+            <input variable="findkata"/>
+            <if expression="findkata = kata[4]">
+                <then>
+                    <output expression="kamus[4]" newline="True"/>
+                </then>
+                <else>
+                    <if expression="findkata = kata[3]">
+                        <then>
+                            <output expression="kamus[3]" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="findkata = kata[2]">
+                                <then>
+                                    <output expression="kamus[2]" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="findkata = kata[1]">
+                                        <then>
+                                            <output expression="kamus[1]" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="findkata = kata[0]">
+                                                <then>
+                                                    <output expression="kamus[0]" newline="True"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Inregister" type="None" variable="size">
+        <parameters>
+            <parameter name="size" type="Integer" array="False"/>
+            <parameter name="kata" type="String" array="True"/>
+            <parameter name="jeniskata" type="String" array="True"/>
+            <parameter name="artikata" type="String" array="True"/>
+            <parameter name="kamus" type="String" array="True"/>
+        </parameters>
+        <body>
+            <if expression="kata[0] = &quot;&quot;">
+                <then>
+                    <input variable="kata[size - 1]"/>
+                    <input variable="jeniskata[size - 1]"/>
+                    <input variable="artikata[size - 1]"/>
+                    <assign variable="kamus[size - 1]" expression="kata[size - 1] &amp; &quot;#&quot; &amp; jeniskata[size - 1] &amp; &quot;#&quot; &amp; artikata[size - 1]"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

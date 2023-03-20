@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-10 09:57:49 AM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTEwOzA5OjU0OjU3IEFNOzI4MDE="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTEwOzA5OjU1OjMxIEFNOzE7VVNFUjtMQVBUT1AtU1JDSks0M1A7MjAyMC0xMC0wODsxMi4xMy4zMyBQTTtmbG93ICg0KS5mcHJnOzY3NDA="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTEwOzA5OjU3OjQ5IEFNOzE7MjkxMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NIM, FullName, StudyProgram, UsernameGithub, PhoneNumber, Nickname, Gender" type="String" array="False" size=""/>
+            <declare name="Generation" type="Integer" array="False" size=""/>
+            <declare name="Greetings" type="String" array="False" size=""/>
+            <declare name="YourUsernameGithub" type="String" array="False" size=""/>
+            <declare name="OptionGender" type="String" array="False" size=""/>
+            <declare name="YearGeneration" type="Integer" array="False" size=""/>
+            <input variable="NIM"/>
+            <input variable="FullName"/>
+            <input variable="StudyProgram"/>
+            <input variable="YourUsernameGithub"/>
+            <input variable="PhoneNumber"/>
+            <input variable="NickName"/>
+            <input variable="OptionGender"/>
+            <input variable="YearGeneration"/>
+            <if expression="YourUsernameGithub == &quot;&quot;">
+                <then>
+                    <assign variable="UserNameGithub" expression="&quot;---&quot;"/>
+                </then>
+                <else>
+                    <assign variable="UserNameGithub" expression="YourUsernameGithub"/>
+                </else>
+            </if>
+            <if expression="OptionGender == &quot;L&quot;">
+                <then>
+                    <if expression="YearGeneration &lt; 2020">
+                        <then>
+                            <assign variable="Greetings" expression="&quot;Bang&quot; &amp; &quot; &quot; &amp; NickName"/>
+                        </then>
+                        <else>
+                            <assign variable="Greetings" expression="NickName"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="YearGeneration &lt; 2020">
+                        <then>
+                            <assign variable="Greetings" expression="&quot;Kak&quot; &amp; &quot; &quot; &amp; Nickname"/>
+                        </then>
+                        <else>
+                            <assign variable="Greetings" expression="NickName"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="NIM&amp;&quot;#&quot;&amp;FullName&amp;&quot;#&quot;&amp;StudyProgram&amp;&quot;#&quot;&amp;UsernameGithub&amp;&quot;#&quot;&amp;PhoneNumber" newline="True"/>
+            <output expression="Greetings" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

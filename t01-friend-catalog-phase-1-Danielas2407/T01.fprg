@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-23 10:03:32 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTA5LTIzOzA1OjAxOjMzIFBNOzI4MTA="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTA5LTIzOzEwOjAzOjMyIFBNOzQ7MjkxOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NIM" type="String" array="False" size=""/>
+            <declare name="NamaLengkap" type="String" array="False" size=""/>
+            <declare name="ProgramStudi" type="String" array="False" size=""/>
+            <declare name="UsernameGitHub" type="String" array="False" size=""/>
+            <declare name="NoTelepon" type="String" array="False" size=""/>
+            <input variable="NIM"/>
+            <input variable="NamaLengkap"/>
+            <input variable="ProgramStudi"/>
+            <input variable="UsernameGitHub"/>
+            <input variable="NoTelepon"/>
+            <output expression="NIM &amp; &quot;#&quot; &amp; NamaLengkap &amp; &quot;#&quot; &amp; ProgramStudi &amp; &quot;#&quot; &amp; UsernameGitHub &amp; &quot;#&quot; &amp; NoTelepon" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

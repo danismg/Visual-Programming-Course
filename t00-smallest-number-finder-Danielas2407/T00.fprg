@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-21 08:58:26 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTA5LTIxOzA4OjM3OjAyIFBNOzI4MTY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTA5LTIxOzA4OjU4OjI2IFBNOzE7MjkzMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <declare name="z" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <input variable="x"/>
+            <input variable="y"/>
+            <input variable="z"/>
+            <if expression="x&lt;y">
+                <then>
+                    <assign variable="s" expression="x"/>
+                </then>
+                <else>
+                    <assign variable="s" expression="y"/>
+                </else>
+            </if>
+            <if expression="z&lt;s">
+                <then>
+                    <assign variable="s" expression="z"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="s" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-15 03:59:02 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTExLTE1OzAzOjU4OjMwIFBNOzI4MTE="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTExLTE1OzAzOjU4OjM0IFBNOzE7QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMS0xMTswMzozNzo1MSBQTTtUMDQoMikuZnByZzs2NDY5"/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTExLTE1OzAzOjU5OjAyIFBNOzE7MjkxOQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="size" type="Integer" array="False" size=""/>
+            <assign variable="size" expression="5"/>
+            <declare name="nim, name, phone" type="String" array="True" size="size"/>
+            <declare name="end" type="Integer" array="False" size=""/>
+            <assign variable="end" expression="size - 1"/>
+            <for variable="size" start="0" end="end" direction="inc" step="1">
+                <declare name="studyprogram, nickname, githubusername, gender, greetings, contact, generationyear" type="String" array="False" size=""/>
+                <input variable="nim[size]"/>
+                <if expression="nim[size] = &quot;---&quot;">
+                    <then>
+                        <assign variable="size" expression="end"/>
+                    </then>
+                    <else>
+                        <input variable="name[size]"/>
+                        <input variable="studyprogram"/>
+                        <input variable="githubusername"/>
+                        <declare name="phonecounter" type="Integer" array="False" size=""/>
+                        <declare name="phonesize" type="Integer" array="False" size=""/>
+                        <assign variable="phonesize" expression="3"/>
+                        <declare name="allphone" type="String" array="False" size=""/>
+                        <assign variable="allphone" expression="&quot;&quot;"/>
+                        <for variable="phonecounter" start="1" end="phonesize" direction="inc" step="1">
+                            <input variable="phone[size]"/>
+                            <if expression="phone[size] = &quot;---&quot;">
+                                <then>
+                                    <assign variable="phone[size]" expression="&quot;&quot;"/>
+                                    <assign variable="phonesize" expression="2"/>
+                                </then>
+                                <else>
+                                    <if expression="phonecounter &gt; 1">
+                                        <then>
+                                            <assign variable="allphone" expression="allphone &amp; &quot;,&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                            <assign variable="allphone" expression="allphone &amp; phone[size]"/>
+                        </for>
+                        <input variable="nickname"/>
+                        <input variable="gender"/>
+                        <input variable="generationyear"/>
+                        <if expression="gender = &quot;L&quot;">
+                            <then>
+                                <if expression="toInteger(generationyear) &gt; 2019">
+                                    <then>
+                                        <assign variable="greetings" expression="nickname"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="greetings" expression="&quot;Bang&quot; &amp; &quot; &quot; &amp; nickname"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="toInteger(generationyear) &gt; 2019">
+                                    <then>
+                                        <assign variable="greetings" expression="nickname"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="greetings" expression="&quot;Kak&quot; &amp; &quot; &quot; &amp; nickname"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <output expression="nim[size] &amp; &quot;#&quot; &amp;  name[size] &amp; &quot;#&quot; &amp; studyprogram &amp; &quot;#&quot; &amp; githubusername &amp; &quot;#&quot; &amp; allphone" newline="True"/>
+                        <output expression="greetings" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

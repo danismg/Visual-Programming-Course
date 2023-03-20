@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-21 04:39:46 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzEyOjI0OjQzIFBNOzI4MDY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzAyOjI4OjA3IFBNOzE7TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzAxOjMyOjMzIFBNOzU3Nzg="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzAzOjI1OjQ5IFBNOzE7QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMi0yMTsxMjoxMjo1NyBQTTtYMDFBICgxKS5mcHJnOzY1NjU="/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtUVRKRUlTOE47MjAyMC0xMi0yMTswNDozMTo0OSBQTTszOzI4NzE="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzA0OjM5OjQ2IFBNOzQ7MjkyNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="matakuliah" type="String" array="False" size=""/>
+            <declare name="sks" type="String" array="False" size=""/>
+            <declare name="nilaihurup" type="String" array="False" size=""/>
+            <declare name="performamax" type="Real" array="False" size=""/>
+            <declare name="simpangan, performa" type="Real" array="False" size=""/>
+            <declare name="benar" type="Boolean" array="False" size=""/>
+            <assign variable="benar" expression="true"/>
+            <declare name="performa2" type="Real" array="False" size=""/>
+            <assign variable="performa2" expression="0.0"/>
+            <declare name="data2" type="String" array="False" size=""/>
+            <assign variable="data2" expression="&quot;&quot;"/>
+            <declare name="data" type="String" array="False" size=""/>
+            <declare name="matakuliah1, nilaihurup1" type="String" array="False" size=""/>
+            <declare name="sks1" type="String" array="False" size=""/>
+            <assign variable="sks1" expression="&quot;&quot;"/>
+            <assign variable="matakuliah1" expression="&quot;&quot;"/>
+            <assign variable="nilaihurup" expression="&quot;&quot;"/>
+            <do expression="nilaihurup!=&quot;---&quot;">
+                <input variable="matakuliah"/>
+                <input variable="sks"/>
+                <input variable="nilaihurup"/>
+                <if expression="nilaihurup==&quot;A&quot;">
+                    <then>
+                        <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                        <assign variable="performa" expression="performamax - (toReal(sks)*4.0)"/>
+                        <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                        <if expression="performa&lt;performa2">
+                            <then>
+                                <assign variable="performa2" expression="performa2"/>
+                                <assign variable="data2" expression="data2"/>
+                                <assign variable="sks1" expression="sks1"/>
+                                <assign variable="matakuliah1" expression="matakuliah1"/>
+                                <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                            </then>
+                            <else>
+                                <assign variable="performa2" expression="performa"/>
+                                <assign variable="data2" expression="data"/>
+                                <assign variable="sks1" expression="sks"/>
+                                <assign variable="matakuliah1" expression="matakuliah"/>
+                                <assign variable="nilaihurup1" expression="nilaihurup"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="nilaihurup==&quot;AB&quot;">
+                            <then>
+                                <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                <assign variable="performa" expression="performamax - (toReal(sks)*3.5)"/>
+                                <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                <if expression="performa&lt;performa2">
+                                    <then>
+                                        <assign variable="performa2" expression="performa2"/>
+                                        <assign variable="data2" expression="data2"/>
+                                        <assign variable="sks1" expression="sks1"/>
+                                        <assign variable="matakuliah1" expression="matakuliah1"/>
+                                        <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="performa2" expression="performa"/>
+                                        <assign variable="data2" expression="data"/>
+                                        <assign variable="sks1" expression="sks"/>
+                                        <assign variable="matakuliah1" expression="matakuliah"/>
+                                        <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="nilaihurup==&quot;B&quot;">
+                                    <then>
+                                        <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                        <assign variable="performa" expression="performamax - (toReal(sks)*3.0)"/>
+                                        <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                        <if expression="performa&lt;performa2">
+                                            <then>
+                                                <assign variable="performa2" expression="performa2"/>
+                                                <assign variable="data2" expression="data2"/>
+                                                <assign variable="sks1" expression="sks1"/>
+                                                <assign variable="matakuliah1" expression="matakuliah1"/>
+                                                <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="performa2" expression="performa"/>
+                                                <assign variable="data2" expression="data"/>
+                                                <assign variable="sks1" expression="sks"/>
+                                                <assign variable="matakuliah1" expression="matakuliah"/>
+                                                <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <if expression="nilaihurup==&quot;BC&quot;">
+                                            <then>
+                                                <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                                <assign variable="performa" expression="performamax - (toReal(sks)*2.5)"/>
+                                                <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                                <if expression="performa&lt;performa2">
+                                                    <then>
+                                                        <assign variable="performa2" expression="performa2"/>
+                                                        <assign variable="data2" expression="data2"/>
+                                                        <assign variable="sks1" expression="sks1"/>
+                                                        <assign variable="matakuliah1" expression="matakuliah1"/>
+                                                        <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                                    </then>
+                                                    <else>
+                                                        <assign variable="performa2" expression="performa"/>
+                                                        <assign variable="data2" expression="data"/>
+                                                        <assign variable="sks1" expression="sks"/>
+                                                        <assign variable="matakuliah1" expression="matakuliah"/>
+                                                        <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                                    </else>
+                                                </if>
+                                            </then>
+                                            <else>
+                                                <if expression="nilaihurup==&quot;C&quot;">
+                                                    <then>
+                                                        <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                                        <assign variable="performa" expression="performamax - (toReal(sks)*2.0)"/>
+                                                        <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                                        <if expression="performa&lt;performa2">
+                                                            <then>
+                                                                <assign variable="performa2" expression="performa2"/>
+                                                                <assign variable="data2" expression="data2"/>
+                                                                <assign variable="sks1" expression="sks1"/>
+                                                                <assign variable="matakuliah1" expression="matakuliah1"/>
+                                                                <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                                            </then>
+                                                            <else>
+                                                                <assign variable="performa2" expression="performa"/>
+                                                                <assign variable="data2" expression="data"/>
+                                                                <assign variable="sks1" expression="sks"/>
+                                                                <assign variable="matakuliah1" expression="matakuliah"/>
+                                                                <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                                            </else>
+                                                        </if>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="nilaihurup==&quot;D&quot;">
+                                                            <then>
+                                                                <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                                                <assign variable="performa" expression="performamax - (toReal(sks)*1.0)"/>
+                                                                <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                                                <if expression="performa&lt;performa2">
+                                                                    <then>
+                                                                        <assign variable="performa2" expression="performa2"/>
+                                                                        <assign variable="data2" expression="data2"/>
+                                                                        <assign variable="sks1" expression="sks1"/>
+                                                                        <assign variable="matakuliah1" expression="matakuliah1"/>
+                                                                        <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <assign variable="performa2" expression="performa"/>
+                                                                        <assign variable="data2" expression="data"/>
+                                                                        <assign variable="sks1" expression="sks"/>
+                                                                        <assign variable="matakuliah1" expression="matakuliah"/>
+                                                                        <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                                                    </else>
+                                                                </if>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="nilaihurup==&quot;E&quot;">
+                                                                    <then>
+                                                                        <assign variable="performamax" expression="toReal(sks)*4.0"/>
+                                                                        <assign variable="performa" expression="performamax - (toReal(sks)*0.0)"/>
+                                                                        <assign variable="data" expression="matakuliah &amp; &quot;#&quot; &amp; sks &amp; &quot;#&quot; &amp; &quot;#&quot; &amp; nilaihurup &amp; &quot;#&quot; &amp; performa"/>
+                                                                        <if expression="performa&lt;performa2">
+                                                                            <then>
+                                                                                <assign variable="performa2" expression="performa2"/>
+                                                                                <assign variable="data2" expression="data2"/>
+                                                                                <assign variable="sks1" expression="sks1"/>
+                                                                                <assign variable="matakuliah1" expression="matakuliah1"/>
+                                                                                <assign variable="nilaihurup1" expression="nilaihurup1"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <assign variable="performa2" expression="performa"/>
+                                                                                <assign variable="data2" expression="data"/>
+                                                                                <assign variable="sks1" expression="sks"/>
+                                                                                <assign variable="matakuliah1" expression="matakuliah"/>
+                                                                                <assign variable="nilaihurup1" expression="nilaihurup"/>
+                                                                            </else>
+                                                                        </if>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+            <if expression="data2 = &quot;&quot;">
+                <then>
+                    <output expression="&quot;---&quot; &amp; &quot;#&quot; &amp; &quot;---&quot; &amp; &quot;#&quot; &amp; &quot;---&quot; &amp;  &quot;#&quot; &amp; &quot;---&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="matakuliah1 &amp; &quot;#&quot; &amp; sks1 &amp; &quot;#&quot; &amp; nilaihurup1 &amp; &quot;#&quot; &amp; tofixed(performa2, 1)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

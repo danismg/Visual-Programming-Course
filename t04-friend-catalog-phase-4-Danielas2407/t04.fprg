@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-15 12:43:38 PM"/>
+        <attribute name="created" value="QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMS0xMTswMzozNzo1MSBQTTsyNjM2"/>
+        <attribute name="edited" value="QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMS0xNTsxMjowMjo0NCBQTTsxMzsyNzkz"/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTExLTE1OzEyOjQzOjM4IFBNOzE7MjkyMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contactcounter" type="Integer" array="False" size=""/>
+            <declare name="size" type="Integer" array="False" size=""/>
+            <assign variable="size" expression="5"/>
+            <declare name="nim, name, studyprogram, nickname, githubusername, gender, greetings, contact" type="String" array="True" size="size"/>
+            <declare name="inputnim, inputname, inputstudyprogram, inputnickname, inputgithubusername, inputgender" type="String" array="False" size=""/>
+            <declare name="generationyear" type="Integer" array="True" size="size"/>
+            <declare name="inputgenerationyear" type="Integer" array="False" size=""/>
+            <declare name="allcontact" type="String" array="False" size=""/>
+            <assign variable="allcontact" expression="&quot;&quot;"/>
+            <for variable="contactcounter" start="0" end="size - 1" direction="inc" step="1">
+                <input variable="inputnim"/>
+                <assign variable="nim[contactcounter]" expression="inputnim"/>
+                <if expression="nim[contactcounter] = &quot;---&quot;">
+                    <then>
+                        <assign variable="contactcounter" expression="size - 1"/>
+                    </then>
+                    <else>
+                        <input variable="inputname"/>
+                        <assign variable="name[contactcounter]" expression="inputname"/>
+                        <input variable="inputstudyprogram"/>
+                        <assign variable="studyprogram[contactcounter]" expression="inputstudyprogram"/>
+                        <input variable="inputgithubusername"/>
+                        <assign variable="githubusername[contactcounter]" expression="inputgithubusername"/>
+                        <declare name="phonecounter" type="Integer" array="False" size=""/>
+                        <declare name="phonesize" type="Integer" array="False" size=""/>
+                        <assign variable="phonesize" expression="3"/>
+                        <declare name="phone" type="String" array="True" size="phonesize"/>
+                        <declare name="inputphone" type="String" array="False" size=""/>
+                        <declare name="allphone" type="String" array="False" size=""/>
+                        <assign variable="allphone" expression="&quot;&quot;"/>
+                        <for variable="phonecounter" start="0" end="phonesize - 1" direction="inc" step="1">
+                            <input variable="inputphone"/>
+                            <assign variable="phone[phonecounter]" expression="inputphone"/>
+                            <if expression="phone[phonecounter] = &quot;---&quot;">
+                                <then>
+                                    <assign variable="phonecounter" expression="phonesize - 1"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                        <if expression="phone[1] = &quot;---&quot;">
+                            <then>
+                                <assign variable="allphone" expression="phone[0]"/>
+                            </then>
+                            <else>
+                                <if expression="phone[2] = &quot;---&quot;">
+                                    <then>
+                                        <assign variable="allphone" expression="phone[0]  &amp; &quot;,&quot; &amp; phone[1]"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="allphone" expression="phone[0]  &amp; &quot;,&quot; &amp; phone[1] &amp; &quot;,&quot; &amp; phone[2]"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <input variable="inputnickname"/>
+                        <assign variable="nickname[contactcounter]" expression="inputnickname"/>
+                        <input variable="inputgender"/>
+                        <assign variable="gender[contactcounter]" expression="inputgender"/>
+                        <input variable="inputgenerationyear"/>
+                        <assign variable="generationyear[contactcounter]" expression="inputgenerationyear"/>
+                        <if expression="gender[contactcounter] = &quot;L&quot;">
+                            <then>
+                                <if expression="generationyear[contactcounter] &lt; 2020">
+                                    <then>
+                                        <assign variable="greetings[contactcounter]" expression="&quot;Bang&quot;"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="greetings[contactcounter]" expression="&quot;&quot;"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="generationyear[contactcounter] &lt; 2020">
+                                    <then>
+                                        <assign variable="greetings[contactcounter]" expression="&quot;Kak&quot;"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="greetings[contactcounter]" expression="&quot;&quot;"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <output expression="nim[contactcounter] &amp; &quot;#&quot; &amp;  name[contactcounter] &amp; &quot;#&quot; &amp; studyprogram[contactcounter] &amp; &quot;#&quot; &amp; githubusername[contactcounter] &amp; &quot;#&quot; &amp; allphone" newline="True"/>
+                        <output expression="greetings[contactcounter] &amp; &quot; &quot; &amp; nickname[contactcounter]" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

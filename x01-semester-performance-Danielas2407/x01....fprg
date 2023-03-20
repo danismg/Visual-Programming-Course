@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-31 06:34:35 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzAxOjAxOjE0IFBNOzI3OTY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzAxOjAxOjE3IFBNOzE7TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTIxOzA5OjAyOjQzIFBNO1EwMS5mcHJnOzY0ODY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzA2OjM0OjA5IFBNOzM7aHA7TEFQVE9QLVFGTDZWQ09POzIwMjAtMTAtMjE7MDg6MjU6MjggUE07UTAxICg1KS5mcHJnOzY0NTQ="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzA2OjM0OjE0IFBNOzE7TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzAxOjAxOjE0IFBNO1gwMS4uLmZwcmc7NjU4Mw=="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEwLTMxOzA2OjM0OjM1IFBNOzQ7MjkyMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="kredit, nilaiHuruf, ips" type="String" array="False" size=""/>
+            <declare name="performa, totalPerforma" type="Real" array="False" size=""/>
+            <declare name="berhenti" type="Boolean" array="False" size=""/>
+            <declare name="totalKredit" type="Integer" array="False" size=""/>
+            <assign variable="berhenti" expression="false"/>
+            <assign variable="performa" expression="0.0"/>
+            <assign variable="totalPerforma" expression="0.0"/>
+            <assign variable="totalKredit" expression="0"/>
+            <while expression="!(berhenti)">
+                <input variable="kredit"/>
+                <input variable="nilaiHuruf"/>
+                <if expression="nilaiHuruf==&quot;A&quot;">
+                    <then>
+                        <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                        <assign variable="performa" expression="ToInteger(kredit)*4.0"/>
+                        <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                    </then>
+                    <else>
+                        <if expression="nilaiHuruf==&quot;AB&quot;">
+                            <then>
+                                <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                <assign variable="performa" expression="ToInteger(kredit)*3.5"/>
+                                <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                            </then>
+                            <else>
+                                <if expression="nilaiHuruf==&quot;B&quot;">
+                                    <then>
+                                        <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                        <assign variable="performa" expression="ToInteger(kredit)*3.0"/>
+                                        <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                                    </then>
+                                    <else>
+                                        <if expression="nilaiHuruf==&quot;BC&quot;">
+                                            <then>
+                                                <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                                <assign variable="performa" expression="ToInteger(kredit)*2.5"/>
+                                                <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                                            </then>
+                                            <else>
+                                                <if expression="nilaiHuruf==&quot;C&quot;">
+                                                    <then>
+                                                        <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                                        <assign variable="performa" expression="ToInteger(kredit)*2.0"/>
+                                                        <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="nilaiHuruf==&quot;D&quot;">
+                                                            <then>
+                                                                <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                                                <assign variable="performa" expression="ToInteger(kredit)*1.0"/>
+                                                                <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="nilaiHuruf==&quot;E&quot;">
+                                                                    <then>
+                                                                        <assign variable="totalKredit" expression="totalKredit + ToInteger(kredit)"/>
+                                                                        <assign variable="performa" expression="ToInteger(kredit)*0.0"/>
+                                                                        <assign variable="totalPerforma" expression="totalPerforma + performa"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <assign variable="berhenti" expression="true"/>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <if expression="!(berhenti)">
+                    <then>
+                        <output expression="performa" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <assign variable="ips" expression="ToFixed(totalPerforma/totalKredit, 2)"/>
+            <if expression="TotalPerforma &gt; 0">
+                <then>
+                    <output expression="IPS" newline="True"/>
+                    <output expression="TotalKredit" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

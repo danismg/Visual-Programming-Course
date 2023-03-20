@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-21 05:01:40 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzA0OjA5OjU4IFBNOzI4MTY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzA0OjEwOjA2IFBNOzE7QVNVUztEQU5JRUxMSU1CT05HMzE7MjAyMC0xMi0yMTsxMjoxMjo1NyBQTTtYMDFBICgxKS5mcHJnOzY1NTM="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTIxOzA1OjAxOjQwIFBNOzE7MjkwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="matakuliah, sks, nilaihurup, data1, data2" type="String" array="False" size=""/>
+            <declare name="lecturename1, credits1, lettergrade1" type="String" array="False" size=""/>
+            <declare name="grade, deviation, deviationgrade, deviationgrade1" type="Real" array="False" size=""/>
+            <assign variable="deviationgrade" expression="0.0"/>
+            <assign variable="lecturename1" expression="&quot;&quot;"/>
+            <assign variable="credits1" expression="&quot;&quot;"/>
+            <assign variable="lettergrade1" expression="&quot;&quot;"/>
+            <assign variable="data1" expression="&quot;&quot;"/>
+            <do expression="lettergrade != &quot;---&quot;">
+                <input variable="matakuliah"/>
+                <input variable="sks"/>
+                <input variable="nilaihurup"/>
+                <if expression="nilaihurup = &quot;A&quot;">
+                    <then>
+                        <assign variable="grade" expression="toReal(sks) * 4.0"/>
+                        <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                        <assign variable="deviationgrade1" expression="deviation - grade"/>
+                        <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                        <if expression="deviationgrade1 &gt; deviationgrade">
+                            <then>
+                                <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                <assign variable="data1" expression="data2"/>
+                                <assign variable="lecturename1" expression="lecturename"/>
+                                <assign variable="credits1" expression="credits"/>
+                                <assign variable="lettergrade1" expression="lettergrade"/>
+                            </then>
+                            <else>
+                                <assign variable="deviationgrade" expression="deviationgrade"/>
+                                <assign variable="data1" expression="data1"/>
+                                <assign variable="lecturename1" expression="lecturename1"/>
+                                <assign variable="credits1" expression="credits1"/>
+                                <assign variable="lettergrade1" expression="lettergrade1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="nilaihurup = &quot;AB&quot;">
+                            <then>
+                                <assign variable="grade" expression="toReal(sks) * 3.5"/>
+                                <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                <assign variable="deviationgrade1" expression="deviation - grade"/>
+                                <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                <if expression="deviationgrade1 &gt; deviationgrade">
+                                    <then>
+                                        <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                        <assign variable="data1" expression="data2"/>
+                                        <assign variable="lecturename1" expression="lecturename"/>
+                                        <assign variable="credits1" expression="credits"/>
+                                        <assign variable="lettergrade1" expression="lettergrade"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="deviationgrade" expression="deviationgrade"/>
+                                        <assign variable="data1" expression="data1"/>
+                                        <assign variable="lecturename1" expression="lecturename1"/>
+                                        <assign variable="credits1" expression="credits1"/>
+                                        <assign variable="lettergrade1" expression="lettergrade1"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="nilaihurup = &quot;B&quot;">
+                                    <then>
+                                        <assign variable="grade" expression="toReal(sks) * 3.0"/>
+                                        <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                        <assign variable="deviationgrade1" expression="deviation - grade"/>
+                                        <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                        <if expression="deviationgrade1 &gt; deviationgrade">
+                                            <then>
+                                                <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                                <assign variable="data1" expression="data2"/>
+                                                <assign variable="lecturename1" expression="lecturename"/>
+                                                <assign variable="credits1" expression="credits"/>
+                                                <assign variable="lettergrade1" expression="lettergrade"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="deviationgrade" expression="deviationgrade"/>
+                                                <assign variable="data1" expression="data1"/>
+                                                <assign variable="lecturename1" expression="lecturename1"/>
+                                                <assign variable="credits1" expression="credits1"/>
+                                                <assign variable="lettergrade1" expression="lettergrade1"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <if expression="nilaihurup = &quot;BC&quot;">
+                                            <then>
+                                                <assign variable="grade" expression="toReal(sks) * 2.5"/>
+                                                <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                                <assign variable="deviationgrade1" expression="deviation - grade"/>
+                                                <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                                <if expression="deviationgrade1 &gt; deviationgrade">
+                                                    <then>
+                                                        <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                                        <assign variable="data1" expression="data2"/>
+                                                        <assign variable="lecturename1" expression="lecturename"/>
+                                                        <assign variable="credits1" expression="credits"/>
+                                                        <assign variable="lettergrade1" expression="lettergrade"/>
+                                                    </then>
+                                                    <else>
+                                                        <assign variable="deviationgrade" expression="deviationgrade"/>
+                                                        <assign variable="data1" expression="data1"/>
+                                                        <assign variable="lecturename1" expression="lecturename1"/>
+                                                        <assign variable="credits1" expression="credits1"/>
+                                                        <assign variable="lettergrade1" expression="lettergrade1"/>
+                                                    </else>
+                                                </if>
+                                            </then>
+                                            <else>
+                                                <if expression="nilaihurup = &quot;C&quot;">
+                                                    <then>
+                                                        <assign variable="grade" expression="toReal(sks) * 2.0"/>
+                                                        <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                                        <assign variable="deviationgrade1" expression="deviation - grade"/>
+                                                        <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                                        <if expression="deviationgrade1 &gt; deviationgrade">
+                                                            <then>
+                                                                <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                                                <assign variable="data1" expression="data2"/>
+                                                                <assign variable="lecturename1" expression="lecturename"/>
+                                                                <assign variable="credits1" expression="credits"/>
+                                                                <assign variable="lettergrade1" expression="lettergrade"/>
+                                                            </then>
+                                                            <else>
+                                                                <assign variable="deviationgrade" expression="deviationgrade"/>
+                                                                <assign variable="data1" expression="data1"/>
+                                                                <assign variable="lecturename1" expression="lecturename1"/>
+                                                                <assign variable="credits1" expression="credits1"/>
+                                                                <assign variable="lettergrade1" expression="lettergrade1"/>
+                                                            </else>
+                                                        </if>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="nilaihurup = &quot;D&quot;">
+                                                            <then>
+                                                                <assign variable="grade" expression="toReal(sks) * 1.0"/>
+                                                                <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                                                <assign variable="performa" expression="deviation - grade"/>
+                                                                <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                                                <if expression="deviationgrade1 &gt; deviationgrade">
+                                                                    <then>
+                                                                        <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                                                        <assign variable="data1" expression="data2"/>
+                                                                        <assign variable="lecturename1" expression="lecturename"/>
+                                                                        <assign variable="credits1" expression="credits"/>
+                                                                        <assign variable="lettergrade1" expression="lettergrade"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <assign variable="deviationgrade" expression="deviationgrade"/>
+                                                                        <assign variable="data1" expression="data1"/>
+                                                                        <assign variable="lecturename1" expression="lecturename1"/>
+                                                                        <assign variable="credits1" expression="credits1"/>
+                                                                        <assign variable="lettergrade1" expression="lettergrade1"/>
+                                                                    </else>
+                                                                </if>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="nilaihurup = &quot;E&quot;">
+                                                                    <then>
+                                                                        <assign variable="grade" expression="toReal(sks) * 0.0"/>
+                                                                        <assign variable="deviation" expression="4.0 * toReal(sks)"/>
+                                                                        <assign variable="performa" expression="deviation - grade"/>
+                                                                        <assign variable="data2" expression="lecturename &amp; &quot;#&quot; &amp; credits &amp; &quot;#&quot; &amp; lettergrade &amp; &quot;#&quot; &amp; deviationgrade1"/>
+                                                                        <if expression="deviationgrade1 &gt; deviationgrade">
+                                                                            <then>
+                                                                                <assign variable="deviationgrade" expression="deviationgrade1"/>
+                                                                                <assign variable="data1" expression="data2"/>
+                                                                                <assign variable="lecturename1" expression="lecturename"/>
+                                                                                <assign variable="credits1" expression="credits"/>
+                                                                                <assign variable="lettergrade1" expression="lettergrade"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <assign variable="deviationgrade" expression="deviationgrade"/>
+                                                                                <assign variable="data1" expression="data1"/>
+                                                                                <assign variable="lecturename1" expression="lecturename1"/>
+                                                                                <assign variable="credits1" expression="credits1"/>
+                                                                                <assign variable="lettergrade1" expression="lettergrade1"/>
+                                                                            </else>
+                                                                        </if>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+            <if expression="data1 = &quot;&quot;">
+                <then>
+                    <output expression="&quot;---&quot; &amp; &quot;#&quot; &amp; &quot;---&quot; &amp; &quot;#&quot; &amp; &quot;---&quot; &amp;  &quot;#&quot; &amp; &quot;---&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="lecturename1 &amp; &quot;#&quot; &amp; credits1 &amp; &quot;#&quot; &amp; lettergrade1 &amp; &quot;#&quot; &amp; tofixed(deviationgrade, 1)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

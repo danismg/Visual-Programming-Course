@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-29 04:14:59 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI5OzA0OjEyOjIzIFBNOzI4MTA="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI5OzA0OjEzOjE0IFBNOzE7TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI5OzAyOjM4OjMxIFBNO21hc3R1YXJpLmZwcmc7NzE5OQ=="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC00TDNUUlBGQTsyMDIwLTEyLTI5OzA0OjE0OjU5IFBNOzE7MjkyOQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="size, banyak" type="Integer" array="False" size=""/>
+            <assign variable="banyak" expression="7"/>
+            <declare name="matakuliah, sks, nilaihuruf, data" type="String" array="True" size="banyak"/>
+            <declare name="A, AB, B, BC, C, D, E" type="Real" array="False" size=""/>
+            <assign variable="A" expression="4.0"/>
+            <assign variable="AB" expression="3.5"/>
+            <assign variable="B" expression="3.0"/>
+            <assign variable="BC" expression="2.5"/>
+            <assign variable="C" expression="2.0"/>
+            <assign variable="D" expression="1.0"/>
+            <assign variable="E" expression="0.0"/>
+            <for variable="size" start="0" end="banyak-1" direction="inc" step="1">
+                <input variable="matakuliah[size]"/>
+                <input variable="sks[size]"/>
+                <input variable="nilaihuruf[size]"/>
+                <if expression="matakuliah[size] == &quot;---&quot;">
+                    <then>
+                        <assign variable="banyak" expression="size"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="data[size]" expression="matakuliah[size] &amp;&quot;#&quot;&amp;sks[size] &amp;&quot;#&quot;&amp;nilaihuruf[size]"/>
+            </for>
+            <declare name="y, z" type="String" array="False" size=""/>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <for variable="size" start="0" end="banyak-2" direction="inc" step="1">
+                <for variable="x" start="size+1" end="banyak-1" direction="inc" step="1">
+                    <if expression="nilaihuruf[size]&gt;nilaihuruf[x]">
+                        <then>
+                            <assign variable="z" expression="data[size]"/>
+                            <assign variable="data[size]" expression="data[x]"/>
+                            <assign variable="data[x]" expression="z"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <for variable="size" start="0" end="banyak-1" direction="inc" step="1">
+                <if expression="data[size]==&quot;---#---#---&quot;">
+                    <then/>
+                    <else>
+                        <output expression="data[size]" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
